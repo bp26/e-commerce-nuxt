@@ -1,11 +1,17 @@
 export default defineNuxtConfig({
   modules: [
+    'nuxt-primevue',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
-    'nuxt-primevue',
     '@pinia/nuxt',
     '@vueuse/nuxt'
   ],
-  devtools: { enabled: true },
-  css: ['primeicons/primeicons.css']
+  css: [
+    'primeicons/primeicons.css',
+    '~/assets/css/main.css',
+    'primevue/resources/themes/lara-light-blue/theme.css'
+  ],
+  primevue: {
+    cssLayerOrder: 'tailwind-base, primevue, tailwind-utilities'
+  }
 })
