@@ -7,5 +7,9 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     'plugin:prettier/recommended',
     'plugin:tailwindcss/recommended'
-  ]
+  ],
+  rules: {
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'off'
+  }
 }
