@@ -1,6 +1,6 @@
 <template>
-  <span class="p-input-icon-left w-full">
-    <i class="pi pi-search"></i>
+  <span class="p-input-icon-right w-full">
+    <i class="pi pi-search text-xl"></i>
     <InputText placeholder="Search" class="w-full" />
   </span>
 </template>
