@@ -1,14 +1,9 @@
 <template>
-  <NuxtLink :to="to" class="group block w-full cursor-pointer py-3 text-center sm:py-4">
-    <i
-      v-if="icon"
-      :class="[
-        icon ? icon : '',
-        active ? 'text-link-active' : ' group-hover:text-link group-active:animate-bounce',
-        'pi m-auto text-2xl sm:text-3xl'
-      ]"
-      s
-    ></i>
+  <NuxtLink :to="to" class="group flex cursor-pointer items-center gap-5">
+    <BaseIconInteractive :icon="icon" class="text-2xl" />
+    <span class="text-xl group-hover:text-link group-active:text-link">
+      <slot></slot>
+    </span>
   </NuxtLink>
 </template>
 
@@ -17,10 +12,6 @@ defineProps({
   to: {
     type: String,
     default: ''
-  },
-  active: {
-    type: Boolean,
-    default: false
   },
   icon: {
     type: String,
