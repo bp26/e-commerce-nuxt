@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="/" class="flex cursor-pointer items-center gap-2">
-    <i class="pi pi-shopping-bag text-primary md:text-4xl"></i>
-    <h1 class="font-mono text-xl font-bold md:text-2xl">
+    <IconLogo class="size-8 md:size-12" />
+    <h1 class="hidden select-none font-mono text-xl font-bold sm:block md:text-2xl">
       <span class="whitespace-nowrap">E-com</span>
       <span class="whitespace-nowrap text-primary">merce</span>
     </h1>
