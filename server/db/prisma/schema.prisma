@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+  binaryTargets = ["native", "windows"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  login String @unique
+  hash String
+  comments Comment[] 
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  title String 
+  description String
+  price Int 
+  discountPercentage Float
+  rating Float
+  stock Int
+  brand String
+  category String
+  thumbnail String
+  images String[]
+  comments Comment[]
+}
+
+model Comment {
+  id String @id @default(uuid())
+  createAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  product Product @relation(fields: [productId], references: [id])
+  productId Int 
+  user User @relation(fields: [userId], references: [id])
+  userId String
+  text String
+}
