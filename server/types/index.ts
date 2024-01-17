@@ -41,3 +41,20 @@ export type ProductQuery = {
   discountPercentage_gte?: string
   discountPercentage_lte?: string
 }
+
+export type ProductPropertyGroupable = 'brand' | 'category'
+export type ProductGroupedByCount<T extends ProductPropertyGroupable> = Array<
+  {
+    _count: number
+  } & { [Key in T]: string }
+>
+
+export type ProductPropertyAggregatable = 'price' | 'stock' | 'rating'
+export type ProductAggregatedByMinmax<T extends ProductPropertyAggregatable> = {
+  _min: {
+    [Key in T]: number
+  }
+  _max: {
+    [Key in T]: number
+  }
+}
